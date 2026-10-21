@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <!-- Builds against a Turian checkout and the UI brick's checkout beside this repository, unless TurianDir and
+         UiBrickDir are given. -->
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <TurianDir Condition="'$(TurianDir)' == ''">$(MSBuildThisFileDirectory)../../../../Turian/</TurianDir>
+        <UiBrickDir Condition="'$(UiBrickDir)' == ''">$(MSBuildThisFileDirectory)../../../org.mass4.turian.ui/</UiBrickDir>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="$(TurianDir)/Turian/Engine/Core/Turian.Engine.Core.csproj" />
+        <ProjectReference Include="$(UiBrickDir)/Brick~/Source/Turian.Engine.UI/Turian.Engine.UI.csproj" />
+        <ProjectReference Include="../../Source/Turian.Engine.Save/Turian.Engine.Save.csproj" />
+        <ProjectReference Include="$(TurianDir)/Turian/Editor/CSharp/CodeGenerator/Turian.CSharp.CodeGenerator.csproj"
+                          OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+        <Compile Include="../Assets/**/*.cs" />
+        <None Include="../Assets/save.prefab" Link="save.prefab" CopyToOutputDirectory="PreserveNewest" />
+        <None Include="../Assets/SaveShowcase.cs.meta" Link="SaveShowcase.cs.meta"
+              CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+    <Target Name="RequireCheckouts" BeforeTargets="PrepareForBuild"
+            Condition="!Exists('$(TurianDir)/Turian.slnx') Or !Exists('$(UiBrickDir)/package.json')">
+        <Error Text="Pass -p:TurianDir=/path/to/Turian and -p:UiBrickDir=/path/to/org.mass4.turian.ui." />
+    </Target>
+</Project>

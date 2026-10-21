@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "org.mass4.turian.vulkan": "builtin:org.mass4.turian.vulkan",
+    "org.mass4.turian.save": "file:..",
+    "org.mass4.turian.ui": "^1.0.0"
+  }
+}

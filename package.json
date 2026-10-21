@@ -1,0 +1,27 @@
+{
+  "id": "org.mass4.turian.save",
+  "version": "1.0.2",
+  "displayName": "Game Saves",
+  "description": "Versioned game snapshots, atomic slots and revision-aware storage adapters.",
+  "author": "MASS4",
+  "license": "MPL-2.0",
+  "exclude": [
+    "Brick~/Tests",
+    ".github",
+    ".gitignore",
+    ".script-*.py",
+    ".script-*.cs",
+    ".script-*.sh"
+  ],
+  "categories": [
+    "turian:simulation"
+  ],
+  "roles": {
+    "source": "Brick~/Source",
+    "tests": "Brick~/Tests",
+    "samples": "Brick~/Samples",
+    "precast": "Brick~/Precast",
+    "bake": "Brick~/Bake"
+  },
+  "bake": "auto"
+}

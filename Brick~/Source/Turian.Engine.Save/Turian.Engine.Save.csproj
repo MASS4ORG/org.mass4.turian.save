@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <Version>0.1.0</Version>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+    <Target Name="PrecastRuntimeAssemblies" AfterTargets="Build" Condition="'$(TargetFramework)' != ''">
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(BrickDir)Brick~/Precast/lib" />
+    </Target>
+    <ItemGroup>
+        <Compile Include="../../../Runtime/**/*.cs" />
+    </ItemGroup>
+</Project>

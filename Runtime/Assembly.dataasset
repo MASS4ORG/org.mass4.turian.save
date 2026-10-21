@@ -1,0 +1,8 @@
+{
+  "__TypeId": "ca028d68-85a9-5f3d-ad2f-c54db757d6fa",
+  "Name": "Turian.Engine.Save",
+  "RootNamespace": "Turian.Engine.Save",
+  "Id": "8566b00f-b181-079b-2340-8751336941e0",
+  "EditorOnly": false,
+  "AllowUnsafeCode": true
+}
