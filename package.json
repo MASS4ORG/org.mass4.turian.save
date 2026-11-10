@@ -5,17 +5,7 @@
   "description": "Versioned game snapshots, atomic slots and revision-aware storage adapters.",
   "author": "MASS4",
   "license": "MPL-2.0",
-  "exclude": [
-    "Brick~/Tests",
-    ".github",
-    ".gitignore",
-    ".script-*.py",
-    ".script-*.cs",
-    ".script-*.sh"
-  ],
-  "categories": [
-    "turian:simulation"
-  ],
+  "categories": ["turian:simulation"],
   "roles": {
     "source": "Brick~/Source",
     "tests": "Brick~/Tests",
@@ -23,5 +13,15 @@
     "precast": "Brick~/Precast",
     "bake": "Brick~/Bake"
   },
+  "exclude": [
+    "Brick~/Tests",
+    ".github",
+    ".gitignore",
+    ".local",
+    ".script-*.py",
+    ".script-*.cs",
+    ".script-*.sh",
+    ".script-*.ps1"
+  ],
   "bake": "auto"
 }
